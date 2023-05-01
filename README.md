@@ -9,9 +9,11 @@ Project overview :
 6. Also you add as well delete blog posts.
 
 Requirement for running this blog project:
-pip install Flask
-pip install Flask-Login
-pip install Flask-SQLAlchemy
+
+1. pip install Flask
+2. pip install Flask-Login
+3. pip install Flask-SQLAlchemy
+4. Run project using python ./app.py
 
 
 
