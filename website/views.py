@@ -39,8 +39,6 @@ def delete_post(id):
 
     if not post:
         flash("Post does not exist.", category='error')
-    elif current_user.id != post.id:
-        flash('You do not have permission to delete this post.', category='error')
     else:
         db.session.delete(post)
         db.session.commit()
@@ -58,5 +56,5 @@ def posts(username):
         flash('No user with that username exists.', category='error')
         return redirect(url_for('views.home'))
 
-    posts = Post.query.filter_by(author=user.id).all()
+    posts = user.posts
     return render_template("posts.html", user=current_user, posts=posts, username=username)
